@@ -8,23 +8,26 @@ import java.util.Scanner;
 
 /**
  *
- * @author yoarc
+ * @author Jose Montenegro Codigo:2024122690
  */
+
 public class ejercicioUno {
     
     public static void main(String[] args) {
-         import java.util.Scanner
-       /* Crear un programa que pide un nombre por Scanner y escribe en consola "buenas tardes, Sr XX"(Evidentemente, sustituyendo XX por el nombre que escriba en cosola*/
        
-               
-        Scanner sc= new Scanner(System.in);
-        System.out.println("Enter username");
-        String Enter username = sc.nextLine();
-        System.out.println("Buenas tardes Sr" + Enter username);
-        
-    }
+        /* Crear un programa que pide un nombre por Scanner y escribe en consola "buenas tardes, Sr XX"(Evidentemente, sustituyendo XX por el nombre que escriba en cosola*/
+            
+     Scanner sc = new Scanner(System.in);  
+     System.out.println("Igresa tu nombre:");
+
+     String userName = sc.nextLine();   
+     System.out.println("Buenas tardes, Sr " + userName);  
+  }
+}
+
+    
        
-    }
+    
     
     
 
