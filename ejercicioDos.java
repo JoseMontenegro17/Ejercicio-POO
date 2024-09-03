@@ -19,7 +19,7 @@ public class ejercicioDos {
         */
         Scanner sc= new Scanner(System.in);
         System.out.println("Ingrese un numero");
-        String number = sc.nextLine();
+        int number = sc.nextInt(); //nextInt captura numero entero, nextLine captura texto
         System.out.println("El número es:"+ " "+ number);
          
     }
