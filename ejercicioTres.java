@@ -20,6 +20,7 @@ public class ejercicioTres {
         System.out.println("Ingrese el segundo número:");
         int numberTwo =sc.nextInt();
         System.out.println("Los números son" + " " + number+" " + "e" + " " + numberTwo);
+        
     }
     
 }
