@@ -9,8 +9,12 @@ package app;
  * @author Jose Montenegro 20241222690
  */
 import java.util.Scanner;
+/* Crear un programa que pida dos valores, el nombre y la edad de una persona,
+y escriba en consola "me llamo xxx tenfo FF años"
+*/
 public class ejercicioCinco {
     public static void main(String[] args) {
+        System.out.println("Datos personales nombre y edad");
         Scanner cs= new Scanner(System.in);
         System.out.println("Ingresa tu nombre:");
         String Name =cs.nextLine();
