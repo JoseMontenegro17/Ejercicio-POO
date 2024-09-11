@@ -26,7 +26,7 @@ public class ejercicoCuatro {
         number2 =sc.nextInt();
         
         suma= number1 + number2;
-        System.out.println("La suma de ambos,con el texto"+" "+ number1 +"  "+ "mas"+" "+ number2+" "+ "son"+" "+ suma);
+        System.out.println("La suma de ambos,"+" "+ number1 +"  "+ "mas"+" "+ number2+" "+ "son"+" "+ suma);
         
     }
     

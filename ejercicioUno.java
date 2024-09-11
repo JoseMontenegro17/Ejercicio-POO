@@ -19,7 +19,7 @@ public class ejercicioUno {
         "buenas tardes, Sr XX"(Evidentemente, sustituyendo XX por el nombre que escriba en cosola*/
             
      Scanner sc = new Scanner(System.in);  
-     System.out.println("Igresa tu nombre:");
+     System.out.println("Ingresa tu nombre:");
 
      String userName = sc.nextLine();   
      System.out.println("Buenas tardes, Sr " + userName);  
