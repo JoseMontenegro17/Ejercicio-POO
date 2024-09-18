@@ -10,10 +10,10 @@ package app;
  */
 public class NumberFor {
      public static void main(String[] args) {
-        var number = 1;
+        var number = 0;
              while(number<=100){
                  System.out.println("number"+ number);
-                 number+=16;
+                 number+=4;
     }
 }
 }

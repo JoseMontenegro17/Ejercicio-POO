@@ -10,15 +10,10 @@ package app;
  */
  import java.util.Scanner;
 public class MatrizTres {
-   
-
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
-        // Crear un array para almacenar 10 números enteros
         int[] numeros = new int[10];
 
-        // Leer 10 números del usuario y almacenarlos en el array
         System.out.println("Ingrese 10 números enteros:");
 
         for (int i = 0; i < 10; i++) {
@@ -45,4 +40,4 @@ public class MatrizTres {
     }
 }
 
-}
+
