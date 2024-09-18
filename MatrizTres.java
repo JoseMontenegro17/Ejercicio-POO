@@ -6,8 +6,43 @@ package app;
 
 /**
  *
- * @author Alejo
+ * @author Jose Montenegro 20241222690
  */
+ import java.util.Scanner;
 public class MatrizTres {
-    
+   
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Crear un array para almacenar 10 números enteros
+        int[] numeros = new int[10];
+
+        // Leer 10 números del usuario y almacenarlos en el array
+        System.out.println("Ingrese 10 números enteros:");
+
+        for (int i = 0; i < 10; i++) {
+            System.out.print("Número " + (i + 1) + ": ");
+            numeros[i] = scanner.nextInt();
+        }
+        
+        System.out.print("Ingrese el número a buscar: ");
+        int numeroBuscado = scanner.nextInt();
+        boolean encontrado = false;
+        for (int num : numeros) {
+            if (num == numeroBuscado) {
+                encontrado = true;
+                break;
+            }
+        }
+
+        if (encontrado) {
+            System.out.println("El número " + numeroBuscado + " ha sido encontrado en el array.");
+        } else {
+            System.out.println("El número " + numeroBuscado + " no está en el array.");
+        }
+
+    }
+}
+
 }
