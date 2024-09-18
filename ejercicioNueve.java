@@ -27,14 +27,15 @@ public class ejercicioNueve {
         
         if (num1 == num2 && num2 == num3){
         
-            System.out.println("tus numeros son iguales");
+            System.out.println("tus datos son iguales");
             
         }else if( num1 == num2 || num2 == num3 || num1 == num3){
         
-            System.out.println("dos de los tres numeros son iguales");
-        }else System.out.println("todos son diferentes");
-        
+            System.out.println("dos de los tres datoa son iguales");
+        }else System.out.println("todos los datos son diferentes");
        
+       
+       }
     }
     
-}
+
