@@ -32,7 +32,7 @@ public class MatrizTres {
         }
 
         if (encontrado) {
-            System.out.println("El número " + numeroBuscado + " ha sido encontrado en el array.");
+            System.out.println("El número " + numeroBuscado + " ha sido encontrado.");
         } else {
             System.out.println("El número " + numeroBuscado + " no está en el array.");
         }
