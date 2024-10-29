@@ -1,5 +1,33 @@
 package EjercicioSiete;
 
+/*Se necesita hacer una aplicación que gestione el almacén de Mercaregala.
+Mercaregala solo vende Productos que cumplen estas reglas:
+- Los Productos almacenan su nombre, el peso y el preciokilo. Sólo se gestionan dos tipos de
+productos, Carnes y Pescados.
+- De las carnes vamos a controlar el origen (que sólo puede ser “vacuno” o “avícola”). Además, hay
+carnes frescas, que deben guardar los días de caducidad, y carnes congeladas, que guardan la
+información de la empresa distribuidora. Además hay dos tipos de carnes congeladas, las de pieza
+entera, que debe reflejar si viene en bandeja o no, y las de pieza troceada, que refleja el número
+medio de piezas que contiene.
+- De los pescados, se trata el tipo de pescado, el peso y el preciokilo.
+- El almacén debe gestionarse con una única colección (array, lista, conjunto, mapa... a elegir por el
+programador), que puede incluir cualquier tipo de producto.
+- Todos los productos deben cumplir con una interfaz que únicamente contiene el
+método double calcularPrecio() , que deberá calcular el precio de un producto multiplicando su
+peso por el preciokilo.
+La aplicación debe tener un menú con estas opciones:
+1.- Añadir producto.
+Se pide al usuario los datos necesarios para introducir un producto en la colección. Se ha de
+empezar por pedir que tipo de producto, y luego, los atributos de dicho producto.
+2.- Listar productos.
+Lista todos los productos del almacén: de cada uno, muestra su nombre y su precio.
+3.- Productos en peligro
+Lista las carnes frescas del almacén que tienen menos de 10 días de caducidad
+4.- Calculo precio medio
+Calcula el precio medio de los precios de todos los productos
+5.- Eliminar bandejas
+Elimina de la colección todas las carnes congeladas en pieza que vengan con bandeja. */
+
 import java.util.Scanner;
 
 public class Main {
