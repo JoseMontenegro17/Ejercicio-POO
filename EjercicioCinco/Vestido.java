@@ -37,7 +37,7 @@ package EjercicioCinco;
             this(otro.nombre, otro.talla, otro.marca, otro.precio, otro.temporadaRebajas, otro.unidadesEnAlmacen);
         }
     
-        // Getters y setters
+        
         public String getNombre() {
             return nombre;
         }
@@ -109,7 +109,6 @@ package EjercicioCinco;
             return unidadesEnAlmacen * (estandoEnRebajas ? precioOriginal * 0.4 : precioOriginal);
         }
     
-        // Aumentar precio en un porcentaje
         public void aumentarPrecio(int porcentaje) {
             precioOriginal += precioOriginal * porcentaje / 100.0;
             if (!temporadaRebajas) {
@@ -117,12 +116,12 @@ package EjercicioCinco;
             }
         }
     
-        // Método copiar (deep copy)
+        
         public Vestido copiar() {
             return new Vestido(this);
         }
     
-        // Métodos compareTo y equals
+        
         public int compareTo(Vestido otro) {
             return Double.compare(this.precio, otro.precio);
         }
