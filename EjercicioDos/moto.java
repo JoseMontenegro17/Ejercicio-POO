@@ -7,7 +7,7 @@ package EjercicioDos;
             this.velocidad = 0; 
         }
     
-        // Método para acelerar
+        
         public void acelerar(int incremento) {
             if (incremento < 0) {
                 System.out.println("El incremento debe ser positivo.");
@@ -20,7 +20,7 @@ package EjercicioDos;
             System.out.println("Velocidad actual después de acelerar: " + velocidad + " km/h");
         }
     
-        // Método para frenar
+       
         public void frenar(int decremento) {
             if (decremento < 0) {
                 System.out.println("El decremento debe ser positivo.");
@@ -37,6 +37,8 @@ package EjercicioDos;
         public int getVelocidad() {
             return velocidad;
         }
-    }
+    } 
+    //consejo de la noche//
+    /*el que no apoya no $$$$$ */
     
 
