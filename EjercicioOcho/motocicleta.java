@@ -1,5 +1,6 @@
 package EjercicioOcho;
 
+
 class Motocicleta extends Vehiculo {
     private String tipo;
 
@@ -19,6 +20,7 @@ class Motocicleta extends Vehiculo {
         System.out.println("Tipo de motocicleta: " + tipo);
     }
 }
+
 
     
 

@@ -1,6 +1,7 @@
 package EjercicioOcho;
 
 
+
 class Coche extends Vehiculo {
     private int numeroPuertas;
 
