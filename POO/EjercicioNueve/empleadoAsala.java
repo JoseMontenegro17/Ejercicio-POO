@@ -1,5 +1,5 @@
 package EjercicioNueve;
-//asalariado// 
+
 
 class EmpleadoAsala extends Empleado {
     private double salarioSemanal;
