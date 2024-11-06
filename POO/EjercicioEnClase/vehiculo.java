@@ -5,12 +5,11 @@ public class vehiculo {
     private String marca;
     private double precio;
     private int cilindraje;
-    protected double impuestoCirculacion;
+    private double impuestoCirculacion;
     protected double cuotaMesGaraje;
     
-    public static final double CUOTA_BASE = 100; // Cuota base de garaje
+    public static final double CUOTA_BASE = 100.0;
     
-    // Constructor
     public vehiculo(String marca, double precio, int cilindraje) {
         this.marca = marca;
         this.precio = precio;
@@ -20,50 +19,16 @@ public class vehiculo {
         calcularImpuestoCirculacion();
     }
 
-    // Método para calcular el impuesto de circulación
     public void calcularImpuestoCirculacion() {
-        this.impuestoCirculacion = 0.02 * this.precio;
+        this.impuestoCirculacion = this.precio * 0.02;
     }
 
-    // Métodos setters y getters
-    public String getPlaca() {
-        return placa;
-    }
-
-    public void setPlaca(String placa) {
-        this.placa = placa;
-    }
-
-    public String getMarca() {
-        return marca;
-    }
-
-    public void setMarca(String marca) {
-        this.marca = marca;
-    }
-
-    public double getPrecio() {
-        return precio;
-    }
-
-    public void setPrecio(double precio) {
-        this.precio = precio;
-    }
-
-    public int getCilindraje() {
-        return cilindraje;
-    }
-
-    public void setCilindraje(int cilindraje) {
-        this.cilindraje = cilindraje;
-    }
-
-    public double getImpuestoCirculacion() {
-        return impuestoCirculacion;
-    }
-
-    public double getCuotaMesGaraje() {
-        return cuotaMesGaraje;
+    public boolean matricular(String matricula) {
+        if (matricula.length() == 6) {
+            this.placa = matricula;
+            return true;
+        }
+        return false;
     }
 
     public void setCuotaMesGaraje(double cuotaMesGaraje) {
@@ -72,12 +37,28 @@ public class vehiculo {
         }
     }
 
-    
-    public boolean matricular(String matricula) {
-        if (matricula.length() == 6) {
-            this.placa = matricula;
-            return true;
-        }
-        return false;
+    // Getters and Setters
+    public String getPlaca() {
+        return placa;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public double getPrecio() {
+        return precio;
+    }
+
+    public int getCilindraje() {
+        return cilindraje;
+    }
+
+    public double getImpuestoCirculacion() {
+        return impuestoCirculacion;
+    }
+
+    public double getCuotaMesGaraje() {
+        return cuotaMesGaraje;
     }
 }

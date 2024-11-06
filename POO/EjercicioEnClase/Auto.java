@@ -9,31 +9,29 @@ public class Auto extends vehiculo {
         super(marca, precio, cilindraje);
         this.tieneRadio = tieneRadio;
         this.tieneNavegador = tieneNavegador;
-
-        if (tieneRadio) {
-            this.impuestoCirculacion *= 1.01; 
-        }
-        if (tieneNavegador) {
-            this.impuestoCirculacion *= 1.02; 
-        }
+        calcularImpuestoCirculacion();
         if (cilindraje > 2499) {
-            this.cuotaMesGaraje *= 1.2; 
+            this.setCuotaMesGaraje(this.getCuotaMesGaraje() * 1.2); // Aumento del 20% si cilindraje > 2499
         }
     }
 
-    public boolean isTieneRadio() {
+    @Override
+    public void calcularImpuestoCirculacion() {
+        super.calcularImpuestoCirculacion();
+        if (tieneRadio) {
+            this.setCuotaMesGaraje(this.getCuotaMesGaraje() * 1.01); // Aumento del 1% por radio
+        }
+        if (tieneNavegador) {
+            this.setCuotaMesGaraje(this.getCuotaMesGaraje() * 1.02); // Aumento del 2% por navegador
+        }
+    }
+
+    // Getters y Setters
+    public boolean tieneRadio() {
         return tieneRadio;
     }
 
-    public void setTieneRadio(boolean tieneRadio) {
-        this.tieneRadio = tieneRadio;
-    }
-
-    public boolean isTieneNavegador() {
+    public boolean tieneNavegador() {
         return tieneNavegador;
-    }
-
-    public void setTieneNavegador(boolean tieneNavegador) {
-        this.tieneNavegador = tieneNavegador;
     }
 }
