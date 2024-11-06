@@ -17,14 +17,14 @@ public class Main {
             System.out.println("6. Salir");
             System.out.print("Elige una opción: ");
             int opcion = scanner.nextInt();
-            scanner.nextLine();  // Limpiar buffer
+            scanner.nextLine();  
             
             switch (opcion) {
                 case 1:
-                    // Alquilar un espacio
+                    
                     System.out.print("Ingresa el tipo de vehículo (1. Moto, 2. Auto): ");
                     int tipo = scanner.nextInt();
-                    scanner.nextLine(); // Limpiar buffer
+                    scanner.nextLine(); 
                     System.out.print("Ingresa la marca del vehículo: ");
                     String marca = scanner.nextLine();
                     System.out.print("Ingresa el precio del vehículo: ");
@@ -45,7 +45,7 @@ public class Main {
                         vehiculo = new Auto(marca, precio, cilindraje, tieneRadio, tieneNavegador);
                     }
                     
-                    scanner.nextLine(); // Limpiar buffer
+                    scanner.nextLine(); 
                     System.out.print("Ingresa la matrícula del vehículo: ");
                     String matricula = scanner.nextLine();
                     
@@ -61,7 +61,7 @@ public class Main {
                     break;
                 
                 case 2:
-                    // Retirar vehículo
+                    
                     System.out.print("Ingresa la matrícula del vehículo a retirar: ");
                     String matriculaRetiro = scanner.nextLine();
                     vehiculo vehiculoRetiro = null;
@@ -80,23 +80,23 @@ public class Main {
                     break;
                 
                 case 3:
-                    // Consulta de ingresos mensuales
+                    
                     System.out.println("Ingresos mensuales: " + garaje.calcularIngresos());
                     break;
                 
                 case 4:
-                    // Consulta proporción autos/motos
+                    
                     System.out.println("Proporción de motos: " + garaje.calcularOcupacionPorTipoVehiculo(new moto("", 0, 0, false)));
                     System.out.println("Proporción de autos: " + garaje.calcularOcupacionPorTipoVehiculo(new Auto("", 0, 0, false, false)));
                     break;
                 
                 case 5:
-                    // Listado de matrículas y cuota mensual
+                    
                     garaje.listarVehiculos();
                     break;
                 
                 case 6:
-                    // Salir
+                    
                     System.out.println("Saliendo del sistema.");
                     return;
                 

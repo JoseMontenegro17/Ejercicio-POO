@@ -8,7 +8,7 @@ public class moto extends vehiculo {
         this.tieneSidecar = tieneSidecar;
         calcularImpuestoCirculacion();
         if (tieneSidecar) {
-            this.cuotaMesGaraje *= 1.5; // Aumento del 50% en cuota mensual
+            this.cuotaMesGaraje *= 1.5; 
         }
     }
 
@@ -16,11 +16,11 @@ public class moto extends vehiculo {
     public void calcularImpuestoCirculacion() {
         super.calcularImpuestoCirculacion();
         if (tieneSidecar) {
-            this.setCuotaMesGaraje(this.getCuotaMesGaraje() * 1.1); // Aumento del 10% en impuesto
+            this.setCuotaMesGaraje(this.getCuotaMesGaraje() * 1.1); 
         }
     }
 
-    // Getters y Setters
+    
     public boolean tieneSidecar() {
         return tieneSidecar;
     }

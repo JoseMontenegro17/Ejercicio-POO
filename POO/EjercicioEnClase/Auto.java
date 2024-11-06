@@ -11,7 +11,7 @@ public class Auto extends vehiculo {
         this.tieneNavegador = tieneNavegador;
         calcularImpuestoCirculacion();
         if (cilindraje > 2499) {
-            this.setCuotaMesGaraje(this.getCuotaMesGaraje() * 1.2); // Aumento del 20% si cilindraje > 2499
+            this.setCuotaMesGaraje(this.getCuotaMesGaraje() * 1.2);
         }
     }
 
@@ -19,14 +19,14 @@ public class Auto extends vehiculo {
     public void calcularImpuestoCirculacion() {
         super.calcularImpuestoCirculacion();
         if (tieneRadio) {
-            this.setCuotaMesGaraje(this.getCuotaMesGaraje() * 1.01); // Aumento del 1% por radio
+            this.setCuotaMesGaraje(this.getCuotaMesGaraje() * 1.01); 
         }
         if (tieneNavegador) {
-            this.setCuotaMesGaraje(this.getCuotaMesGaraje() * 1.02); // Aumento del 2% por navegador
+            this.setCuotaMesGaraje(this.getCuotaMesGaraje() * 1.02); 
         }
     }
 
-    // Getters y Setters
+    
     public boolean tieneRadio() {
         return tieneRadio;
     }

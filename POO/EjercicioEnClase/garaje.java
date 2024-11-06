@@ -3,7 +3,7 @@ package EjercicioEnClase;
 import java.util.ArrayList;
 
 public class garaje implements iGarage {
-    public static final int NUMERO_ESPACIOS = 10; // Número total de espacios en el garaje
+    public static final int NUMERO_ESPACIOS = 10;
     ArrayList<vehiculo> vehiculos = new ArrayList<>();
 
     @Override
@@ -28,13 +28,13 @@ public class garaje implements iGarage {
 
     public boolean alquilarEspacio(vehiculo vehiculo) {
         if (vehiculos.size() >= NUMERO_ESPACIOS) {
-            return false; // No hay espacio
+            return false; 
         }
         if (vehiculo.getPlaca() == null) {
-            return false; // El vehículo no está matriculado
+            return false; 
         }
         if (vehiculo instanceof moto && calcularOcupacionPorTipoVehiculo(new moto("", 0, 0, false)) >= NUMERO_ESPACIOS * 0.8) {
-            return false; // Más del 80% de motos
+            return false; 
         }
         vehiculos.add(vehiculo);
         return true;
