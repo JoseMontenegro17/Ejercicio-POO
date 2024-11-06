@@ -11,13 +11,13 @@ public class Auto extends vehiculo {
         this.tieneNavegador = tieneNavegador;
 
         if (tieneRadio) {
-            this.impuestoCirculacion *= 1.01; // Incrementa el impuesto en un 1%
+            this.impuestoCirculacion *= 1.01; 
         }
         if (tieneNavegador) {
-            this.impuestoCirculacion *= 1.02; // Incrementa el impuesto en un 2%
+            this.impuestoCirculacion *= 1.02; 
         }
         if (cilindraje > 2499) {
-            this.cuotaMesGaraje *= 1.2; // Incrementa la cuota en un 20%
+            this.cuotaMesGaraje *= 1.2; 
         }
     }
 

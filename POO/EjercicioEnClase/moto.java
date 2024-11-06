@@ -7,8 +7,8 @@ public class moto extends vehiculo {
         super(marca, precio, cilindraje);
         this.tieneSidecar = tieneSidecar;
         if (tieneSidecar) {
-            this.cuotaMesGaraje *= 1.5; // Incrementa la cuota en 50%
-            this.impuestoCirculacion *= 1.1; // Incrementa el impuesto en un 10%
+            this.cuotaMesGaraje *= 1.5; 
+            this.impuestoCirculacion *= 1.1;
         }
     }
 
