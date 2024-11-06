@@ -13,12 +13,12 @@ public class garaje implements iGarage {
         }
 
         if (vehiculos.size() >= NUM_PLACAS) {
-            return false;  // No hay más plazas disponibles
+            return false;  
         }
         
         int motosCount = calcularOcupacionPorTipoVehiculo(new moto("", 0, 0, false));
         if (motosCount >= NUM_PLACAS * 0.8) {
-            return false;  // Más del 80% ocupado por motos
+            return false;  
         }
 
         vehiculos.add(v);
