@@ -2,7 +2,7 @@ package Ejercicio15;
 
 import java.util.Scanner;
 
-/* */
+
 
 public class prueba {
     public static void main(String[] args) {
@@ -11,7 +11,7 @@ public class prueba {
 
         int opcion;
         do {
-            System.out.println("\nMenú:");
+            System.out.println("Menú:");
             System.out.println("1. Ingresar monedas");
             System.out.println("2. Listar Contenido");
             System.out.println("3. Mostrar saldo");
