@@ -6,7 +6,7 @@ import java.io.*;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Garaje garaje = new Garaje();
+        garaje garaje = new garaje();
 
         while (true) {
             System.out.println("\n*** Menú de Gestión del Garaje ***");
