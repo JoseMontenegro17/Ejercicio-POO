@@ -9,7 +9,7 @@ public class garaje implements iGarage {
 
     public boolean alquilarPlaza(vehiculo v)  {
         if (v.getMatricula() == null) {
-           setCuotaMesGarage= ("El vehículo no tiene matrícula.");
+           String setCuotaMesGarage = ("El vehículo no tiene matrícula.");
         }
 
         if (vehiculos.size() >= NUM_PLACAS) {

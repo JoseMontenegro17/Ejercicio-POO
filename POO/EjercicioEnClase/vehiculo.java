@@ -8,7 +8,7 @@ public class vehiculo {
     private double impuestoCirculacion;
     protected double cuotaMesGaraje;
     
-    public static final double CUOTA_BASE = 100.0;
+    public static  double CUOTA_BASE = 100.0;
     
     public vehiculo(String marca, double precio, int cilindraje) {
         this.marca = marca;
