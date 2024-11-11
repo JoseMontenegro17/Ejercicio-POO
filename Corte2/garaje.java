@@ -18,7 +18,7 @@ public class garaje {
         if (espaciosOcupados < capacidadTotal) {
             vehiculos.add(vehiculo);
             espaciosOcupados++;
-            return true; // Vehículo agregado exitosamente
+            return true;
         }
         return false; // No hay espacio disponible
     }
