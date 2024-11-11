@@ -1,121 +1,36 @@
 package Corte2;
 import java.util.ArrayList;
-
-
-import java.util.ArrayList;
+import java.util.List;
 
 public class garaje {
-    private ArrayList<Vehiculo> vehiculos;
-    private int capacidad;
-    private int espaciosParaCamiones;
+    private List<Vehiculo> vehiculos; 
+    private int capacidadTotal;
+    private int espaciosOcupados;
 
-    public garaje(int capacidad) {
-        this.capacidad = capacidad;
-        this.espaciosParaCamiones = (int) (capacidad * 0.10);
-        this.vehiculos = new ArrayList<>();
+    // Constructor
+    public garaje(int capacidadTotal) {
+        this.vehiculos = new ArrayList<>(); this.capacidadTotal = capacidadTotal;
+        this.espaciosOcupados = 0;
     }
 
-    public boolean alquilarEspacio(vehiculo vehiculo) {
-        if (vehiculos.size() >= capacidad) {
-            System.out.println("El garaje está lleno.");
-            return false;
-        }
-
-        if (contarTipo("Camion") >= espaciosParaCamiones) {
-            System.out.println("No hay espacios disponibles para camiones.");
-            return false;
-        }
-
-        vehiculos.add(vehiculo);
-        System.out.println("Vehículo con matrícula " + vehiculo.getMatricula() + " agregado al garaje.");
-        return true;
-    }
-
-    public boolean alquilarEspacio(Vehiculo vehiculo) {
-        if (vehiculo instanceof Camion) {
-            return alquilarEspacio((Camion) vehiculo);
-        } else {
-            if (vehiculos.size() >= capacidad) {
-                System.out.println("El garaje está lleno.");
-                return false;
-            }
-
+    // Método para agregar un vehículo
+    public boolean agregarVehiculo(Vehiculo vehiculo) {
+        if (espaciosOcupados < capacidadTotal) {
             vehiculos.add(vehiculo);
-            System.out.println("Vehículo con matrícula " + vehiculo.getMatricula() + " agregado al garaje.");
-            return true;
+            espaciosOcupados++;
+            return true; // Vehículo agregado exitosamente
         }
+        return false; // No hay espacio disponible
     }
 
-    private int contarTipo(String tipo) {
-        int count = 0;
-        for (Vehiculo vehiculo : vehiculos) {
-            if (tipo.equals("Camion") && vehiculo instanceof Camion) {
-                count++;
-            } else if (tipo.equals("Auto") && vehiculo instanceof Auto) {
-                count++;
-            } else if (tipo.equals("Moto") && vehiculo instanceof Moto) {
-                count++;
-            }
-        }
-        return count;
+    // Método para obtener la lista de vehículos
+    public List<Vehiculo> obtenerVehiculos() {
+        return vehiculos;
     }
 
-    public int buscarVehiculo(String matricula) {
-        for (int i = 0; i < vehiculos.size(); i++) {
-            if (vehiculos.get(i).getMatricula().equals(matricula)) {
-                return i;
-            }
-        }
-        return -1;
+    // Método para obtener el número de espacios ocupados
+    public int getEspaciosOcupados() {
+        return espaciosOcupados;
     }
 
-    public void calcularProporciones() {
-        int autos = contarTipo("Auto");
-        int motos = contarTipo("Moto");
-        int camiones = contarTipo("Camion");
-
-        System.out.println("Proporciones:");
-        System.out.println("Autos: " + autos);
-        System.out.println("Motos: " + motos);
-        System.out.println("Camiones: " + camiones);
-    }
-
-    public int plazasDisponibles() {
-        return capacidad - vehiculos.size();
-    }
-
-    public int contarCamiones() {
-        return contarTipo("Camion");
-    }
-}
-
-
-class Vehiculo {
-    private String matricula;
-
-    public Vehiculo(String matricula) {
-        this.matricula = matricula;
-    }
-
-    public String getMatricula() {
-        return matricula;
-    }
-}
-
-class Camion extends Vehiculo {
-    public Camion(String matricula) {
-        super(matricula);
-    }
-}
-
-class Auto extends Vehiculo {
-    public Auto(String matricula) {
-        super(matricula);
-    }
-}
-
-class Moto extends Vehiculo {
-    public Moto(String matricula) {
-        super(matricula);
-    }
 }
