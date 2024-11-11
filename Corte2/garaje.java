@@ -1,7 +1,9 @@
 package Corte2;
+
 import java.util.ArrayList;
 import java.util.List;
 
+// Clase Garaje
 public class garaje {
     private List<Vehiculo> vehiculos; 
     private int capacidadTotal;
@@ -9,7 +11,8 @@ public class garaje {
 
     // Constructor
     public garaje(int capacidadTotal) {
-        this.vehiculos = new ArrayList<>(); this.capacidadTotal = capacidadTotal;
+        this.vehiculos = new ArrayList<>(); 
+        this.capacidadTotal = capacidadTotal;
         this.espaciosOcupados = 0;
     }
 
@@ -33,4 +36,29 @@ public class garaje {
         return espaciosOcupados;
     }
 
+    // Método para contar la cantidad de vehículos por tipo
+    public void contarVehiculosPorTipo() {
+        int autos = 0, motos = 0, camiones = 0;
+        for (Vehiculo vehiculo : vehiculos) {
+            switch (vehiculo.getTipo()) {
+                case "Auto":
+                    autos++;
+                    break;
+                case "Moto":
+                    motos++;
+                    break;
+                case "Camion":
+                    camiones++;
+                    break;
+            }
+        }
+        System.out.println("Autos: " + autos);
+        System.out.println("Motos: " + motos);
+        System.out.println("Camiones: " + camiones);
+    }
+
+    // Método para determinar las plazas disponibles en el garaje
+    public int plazasDisponibles() {
+        return capacidadTotal - espaciosOcupados;
+    }
 }

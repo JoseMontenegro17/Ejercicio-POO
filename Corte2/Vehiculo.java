@@ -3,7 +3,7 @@ public class Vehiculo {
     
     private String matricula; 
     private String tipo; // "Auto", "Moto", "Camion"
-    private int capacidadCarga;
+    protected int capacidadCarga;
 
     // Constructor
     public Vehiculo(String matricula, String tipo, int capacidadCarga) {

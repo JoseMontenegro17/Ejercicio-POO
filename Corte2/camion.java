@@ -1,5 +1,6 @@
 package Corte2;
 
+// Clase Camion que hereda de Vehiculo
 public class camion extends Vehiculo {
     private int numeroEjes;
     private String tipoCamion; // "Sencillo", "Doble"
@@ -11,7 +12,6 @@ public class camion extends Vehiculo {
         this.tipoCamion = tipoCamion;
     }
 
-   
     public int getNumeroEjes() {
         return numeroEjes;
     }
@@ -20,4 +20,14 @@ public class camion extends Vehiculo {
         return tipoCamion;
     }
 
+    // Método para calcular el valor de la matrícula
+    public double calcularValorMatricula() {
+        double valor = 0;
+        if (tipoCamion.equals("Sencillo")) {
+            valor = capacidadCarga * 0.9 + 10;
+        } else if (tipoCamion.equals("Doble")) {
+            valor = capacidadCarga * 0.9 + 20;
+        }
+        return valor;
+    }
 }
