@@ -7,7 +7,7 @@ public class camion extends Vehiculo {
 
     // Constructor
     public camion(String matricula, int numeroEjes, String tipoCamion, int capacidadCarga) {
-        super(matricula, "Camion", capacidadCarga); // Llama al constructor de la clase padre (Vehiculo)
+        super(matricula, "Camion", capacidadCarga); 
         this.numeroEjes = numeroEjes;
         this.tipoCamion = tipoCamion;
     }

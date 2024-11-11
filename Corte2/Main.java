@@ -6,7 +6,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         garaje garaje = new garaje(5);
         
-        // Crear algunos vehículos de prueba
+        // prueba
         camion camion1 = new camion("ABC123", 4, "Sencillo", 10);
         camion camion2 = new camion("DEF456", 6, "Doble", 15);
         
@@ -14,7 +14,7 @@ public class Main {
         garaje.agregarVehiculo(camion1);
         garaje.agregarVehiculo(camion2);
         
-        // Menú interactivo
+        
         int opcion;
         do {
             System.out.println("\n--- Menú del Garaje ---");
@@ -28,7 +28,7 @@ public class Main {
             
             switch (opcion) {
                 case 1:
-                    // Opción para agregar un vehículo
+                    //agregar vehiculo
                     System.out.print("Ingrese el tipo de vehículo (Auto, Moto, Camion): ");
                     String tipo = scanner.next();
                     System.out.print("Ingrese la matrícula: ");
@@ -61,7 +61,7 @@ public class Main {
                     break;
                     
                 case 3:
-                    // Opción para ver el valor de matrícula de los camiones
+                    // Opción  ver el valor de matrícula 
                     for (Vehiculo v : garaje.obtenerVehiculos()) {
                         if (v instanceof camion) {
                             camion c = (camion) v;
@@ -71,7 +71,7 @@ public class Main {
                     break;
                     
                 case 4:
-                    // Opción para ver plazas disponibles en el garaje
+                    // Opció veer plazas disponibles en el garaje
                     System.out.println("Plazas disponibles en el garaje: " + garaje.plazasDisponibles());
                     break;
                     

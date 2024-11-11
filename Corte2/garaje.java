@@ -57,7 +57,7 @@ public class garaje {
         System.out.println("Camiones: " + camiones);
     }
 
-    // Método para determinar las plazas disponibles en el garaje
+    // Método que determina las plazas disponibles en el garaje
     public int plazasDisponibles() {
         return capacidadTotal - espaciosOcupados;
     }
