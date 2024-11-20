@@ -1,18 +1,23 @@
 package Corte2;
-public class Vehiculo {
-    private String marca;
-    private String modelo;
-    private double precio;
+/**
+ * Clase abstracta que representa un vehículo genérico.
+ * Proporciona propiedades comunes como marca, modelo y matrícula,
+ * así como métodos abstractos para mostrar información y obtener el tipo de vehículo.
+ */
+public abstract class Vehiculo {
+    protected String marca;  // Marca del vehículo
+    protected String modelo; // Modelo del vehículo
+    protected String matricula; // Matrícula del vehículo
 
-    // Constructor
-    public Vehiculo(String marca, String modelo, double precio) {
+    // Constructor para inicializar las propiedades del vehículo
+    public Vehiculo(String marca, String modelo, String matricula) {
         this.marca = marca;
         this.modelo = modelo;
-        this.precio = precio;
+        this.matricula = matricula;
     }
 
-    // Métodos getter
-    public String getMarca () {
+    // Métodos para obtener los valores de las propiedades
+    public String getMarca() {
         return marca;
     }
 
@@ -20,18 +25,13 @@ public class Vehiculo {
         return modelo;
     }
 
-    public double getPrecio(){
-        return precio;
+    public String getMatricula() {
+        return matricula;
     }
 
-    // Método para calcular impuesto de circulación (general, se sobrescribe en subclases)
-    public double calcularImpuestoCirculacion() {
-        return precio * 0.05; // Ejemplo base: 5% del precio
-    }
+    // Método abstracto para mostrar información del vehículo
+    public abstract void mostrarInfo();
 
-    // Método para calcular cuota mensual (general, se sobrescribe en subclases)
-    public double calcularCuotaMensualGaraje() {
-        return 100; // Valor base de la cuota mensual
-    }
+    // Método abstracto para obtener el tipo de vehículo (Auto, Moto, etc.)
+    public abstract String getTipoVehiculo();
 }
-

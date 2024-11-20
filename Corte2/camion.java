@@ -1,57 +1,32 @@
 package Corte2;
-
+/**
+ * Clase que representa un camión.
+ * Extiende la clase abstracta Vehiculo e implementa sus métodos abstractos.
+ * Incluye una propiedad adicional para especificar el tipo de camión.
+ */
 public class Camion extends Vehiculo {
-    private int numeroEjes;
-    private String tipoCamion; // "Sencillo" o "Doble"
-    private double capacidadCarga; // En toneladas
+    private String tipoCamion; // Tipo de camión (Sencillo o Doble)
 
-    // Constructor
-    public Camion(String marca, String modelo, double precio, int numeroEjes, String tipoCamion, double capacidadCarga) {
-        super(marca, modelo, precio);
-
-        // Validaciones
-        if (tipoCamion.equalsIgnoreCase("Sencillo") && numeroEjes != 2) {
-            throw new IllegalArgumentException("Un camión sencillo debe tener exactamente 2 ejes.");
-        }
-        if (tipoCamion.equalsIgnoreCase("Doble") && (numeroEjes < 3 || numeroEjes > 6)) {
-            throw new IllegalArgumentException("Un camión doble debe tener entre 3 y 6 ejes.");
-        }
-
-        this.numeroEjes = numeroEjes;
+    // Constructor que inicializa las propiedades del camión
+    public Camion(String marca, String modelo, String matricula, String tipoCamion) {
+        super(marca, modelo, matricula);
         this.tipoCamion = tipoCamion;
-        this.capacidadCarga = capacidadCarga;
     }
 
-    // Métodos getter
-    public int getNumeroEjes() {
-        return numeroEjes;
-    }
-
+    // Método para obtener el tipo de camión
     public String getTipoCamion() {
         return tipoCamion;
     }
 
-    public double getCapacidadCarga() {
-        return capacidadCarga;
+    // Implementación del método para mostrar información específica del camión
+    @Override
+    public void mostrarInfo() {
+        System.out.println("Camión - Marca: " + marca + ", Modelo: " + modelo + ", Matrícula: " + matricula + ", Tipo: " + tipoCamion);
     }
 
-    // Sobrescribir método para calcular impuesto de circulación
+    // Implementación del método que devuelve el tipo de vehículo
     @Override
-    public double calcularImpuestoCirculacion() {
-        double impuestoBase = super.getPrecio() * 0.09;
-        double extraPorCarga = Math.ceil(capacidadCarga / 5) * 10; // $10 por cada 5 toneladas
-        return impuestoBase + extraPorCarga;
-    }
-
-    // Sobrescribir método para calcular cuota mensual del garaje
-    @Override
-    public double calcularCuotaMensualGaraje() {
-        double cuotaBase = super.calcularCuotaMensualGaraje();
-        if (tipoCamion.equalsIgnoreCase("Sencillo")) {
-            return cuotaBase * 1.75; // Aumenta 75%
-        } else if (tipoCamion.equalsIgnoreCase("Doble")) {
-            return cuotaBase * 2.25; // Aumenta 125%
-        }
-        return cuotaBase; // Caso general (no debería ocurrir)
+    public String getTipoVehiculo() {
+        return "Camion";
     }
 }
