@@ -1,7 +1,7 @@
 package Corte2;
 import java.util.Scanner;
 
-public class garaje {
+public class garaje implements GarajeInterface {
     private Vehiculo[] espacios; // Arreglo de espacios en el garaje
     private int capacidad; // Capacidad total del garaje
     private int totalOcupados; // Contador de espacios ocupados
@@ -173,6 +173,18 @@ public class garaje {
             }
         } while (opcion != 6);
         scanner.close();
+    }
+
+    @Override
+    public void calcularProporcion() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'calcularProporcion'");
+    }
+
+    @Override
+    public void camionesPorTipo() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'camionesPorTipo'");
     }
 }
 

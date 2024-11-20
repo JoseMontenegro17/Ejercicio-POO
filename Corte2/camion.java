@@ -1,12 +1,12 @@
 package Corte2;
 
-public class camion extends Vehiculo {
+public class Camion extends Vehiculo {
     private int numeroEjes;
     private String tipoCamion; // "Sencillo" o "Doble"
     private double capacidadCarga; // En toneladas
 
     // Constructor
-    public camion(String marca, String modelo, double precio, int numeroEjes, String tipoCamion, double capacidadCarga) {
+    public Camion(String marca, String modelo, double precio, int numeroEjes, String tipoCamion, double capacidadCarga) {
         super(marca, modelo, precio);
 
         // Validaciones

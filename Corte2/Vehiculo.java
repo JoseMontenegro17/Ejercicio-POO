@@ -2,7 +2,7 @@ package Corte2;
 public class Vehiculo {
     private String marca;
     private String modelo;
-    private double precio; // Precio del vehículo
+    private double precio;
 
     // Constructor
     public Vehiculo(String marca, String modelo, double precio) {
