@@ -1,17 +1,28 @@
 package Corte2;
 
-// Clase Camion que hereda de Vehiculo
 public class camion extends Vehiculo {
     private int numeroEjes;
-    private String tipoCamion; // "Sencillo", "Doble"
+    private String tipoCamion; // "Sencillo" o "Doble"
+    private double capacidadCarga; // En toneladas
 
     // Constructor
-    public camion(String matricula, int numeroEjes, String tipoCamion, int capacidadCarga) {
-        super(matricula, "Camion", capacidadCarga); 
+    public camion(String marca, String modelo, double precio, int numeroEjes, String tipoCamion, double capacidadCarga) {
+        super(marca, modelo, precio);
+
+        // Validaciones
+        if (tipoCamion.equalsIgnoreCase("Sencillo") && numeroEjes != 2) {
+            throw new IllegalArgumentException("Un camión sencillo debe tener exactamente 2 ejes.");
+        }
+        if (tipoCamion.equalsIgnoreCase("Doble") && (numeroEjes < 3 || numeroEjes > 6)) {
+            throw new IllegalArgumentException("Un camión doble debe tener entre 3 y 6 ejes.");
+        }
+
         this.numeroEjes = numeroEjes;
         this.tipoCamion = tipoCamion;
+        this.capacidadCarga = capacidadCarga;
     }
 
+    // Métodos getter
     public int getNumeroEjes() {
         return numeroEjes;
     }
@@ -20,14 +31,27 @@ public class camion extends Vehiculo {
         return tipoCamion;
     }
 
-    // Método para calcular el valor de la matrícula
-    public double calcularValorMatricula() {
-        double valor = 0;
-        if (tipoCamion.equals("Sencillo")) {
-            valor = capacidadCarga * 0.9 + 10;
-        } else if (tipoCamion.equals("Doble")) {
-            valor = capacidadCarga * 0.9 + 20;
+    public double getCapacidadCarga() {
+        return capacidadCarga;
+    }
+
+    // Sobrescribir método para calcular impuesto de circulación
+    @Override
+    public double calcularImpuestoCirculacion() {
+        double impuestoBase = super.getPrecio() * 0.09;
+        double extraPorCarga = Math.ceil(capacidadCarga / 5) * 10; // $10 por cada 5 toneladas
+        return impuestoBase + extraPorCarga;
+    }
+
+    // Sobrescribir método para calcular cuota mensual del garaje
+    @Override
+    public double calcularCuotaMensualGaraje() {
+        double cuotaBase = super.calcularCuotaMensualGaraje();
+        if (tipoCamion.equalsIgnoreCase("Sencillo")) {
+            return cuotaBase * 1.75; // Aumenta 75%
+        } else if (tipoCamion.equalsIgnoreCase("Doble")) {
+            return cuotaBase * 2.25; // Aumenta 125%
         }
-        return valor;
+        return cuotaBase; // Caso general (no debería ocurrir)
     }
 }

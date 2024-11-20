@@ -1,10 +1,11 @@
 package garaje2;
 
+import java.util.List;
 import java.util.Scanner;
 import java.io.*;
 
 public class Main {
-    public static void main(String[] args) {
+    public static <ehiculo> void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         garaje garaje = new garaje();
 
@@ -46,8 +47,8 @@ public class Main {
                 case 4:
                     // Consulta proporción coches/motos
                     System.out.println("Proporción coches/motos:");
-                    System.out.println("Motos: " + garaje.calcularOcupacionPorTipoVehiculo(new Moto("", 0, 0, false)));
-                    System.out.println("Coches: " + garaje.calcularOcupacionPorTipoVehiculo(new Coche("", 0, 0, false, false)));
+                    System.out.println("Motos: " + garaje.calcularOcupacionPorTipoVehiculo(new moto("", 0, 0, false)));
+                    System.out.println("Coches: " + garaje.calcularOcupacionPorTipoVehiculo(new coche("", 0, 0, false, false)));
                     break;
 
                 case 5:

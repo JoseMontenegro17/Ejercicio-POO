@@ -1,8 +1,5 @@
 package Personal;
 import java.util.Scanner;
-
-import javax.print.attribute.standard.OrientationRequested;
-
 import java.util.Random;
 public class generarIdUnico {
     public static void main(String[] args) {
