@@ -115,12 +115,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 // Clase Garaje que implementa la interfaz IGaraje
-class Garaje implements IGaraje {
+class garaje implements IGaraje {
     private List<Vehiculo> vehiculos;    // Lista de vehículos
     private int totalPlazas;             // Total de plazas en el garaje
     private int espaciosCamiones;        // Espacios reservados para camiones
 
-    public Garaje(int totalPlazas) {
+    public garaje(int totalPlazas) {
         this.totalPlazas = totalPlazas;
         this.espaciosCamiones = (int) (totalPlazas * 0.1); // 10% de las plazas para camiones
         this.vehiculos = new ArrayList<>();  // Inicializa la lista de vehículos
