@@ -1,12 +1,12 @@
 package Corte2;
 
-import java.util.Scanner;
+/*import java.util.Scanner;
 
 public class Main {
     /**
      * @param args
      */
-    public static void main(String[] args) {
+  /*  public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         garaje garaje = new garaje(10); // Garaje con capacidad de 10 vehículos
 
@@ -84,4 +84,67 @@ public class Main {
 
         scanner.close();
     }
+}
+//modi con arrayList
+   */
+// Clase principal para ejecutar el programa
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Garaje garaje = new Garaje(20); // Crear un garaje con 20 plazas
+
+        while (true) {
+            // Menú de opciones
+            System.out.println("Menú:");
+            System.out.println("1. Alquilar espacio");
+            System.out.println("2. Calcular proporción de vehículos");
+            System.out.println("3. Contar camiones por tipo");
+            System.out.println("4. Mostrar plazas disponibles");
+            System.out.println("5. Salir");
+            System.out.print("Selecciona una opción: ");
+            int opcion = scanner.nextInt();
+            scanner.nextLine(); // Limpiar el buffer
+
+            // Procesa la opción seleccionada
+            switch (opcion) {
+                case 1:
+                    System.out.print("Ingrese tipo de vehículo (Auto/Moto/Camion): ");
+                    String tipo = scanner.nextLine();
+                    System.out.print("Ingrese marca: ");
+                    String marca = scanner.nextLine();
+                    System.out.print("Ingrese modelo: ");
+                    String modelo = scanner.nextLine();
+                    System.out.print("Ingrese matrícula: ");
+                    String matricula = scanner.nextLine();
+
+                    if (tipo.equalsIgnoreCase("Auto")) {
+                        garaje.alquilarEspacio(new Auto(marca, modelo, matricula));
+                    } else if (tipo.equalsIgnoreCase("Moto")) {
+                        garaje.alquilarEspacio(new Moto(marca, modelo, matricula));
+                    } else if (tipo.equalsIgnoreCase("Camion")) {
+                        System.out.print("Ingrese tipo de camión (Sencillo/Doble): ");
+                        String tipoCamion = scanner.nextLine();
+                        garaje.alquilarEspacio(new Camion(marca, modelo, matricula, tipoCamion));
+                    }
+                    break;
+                case 2:
+                    garaje.calcularProporcionVehiculos();
+                    break;
+                case 3:
+                    garaje.contarCamionesPorTipo();
+                    break;
+                case 4:
+                    garaje.mostrarPlazasDisponibles();
+                    break;
+                case 5:
+                    System.out.println("Saliendo del programa...");
+                    return;
+                default:
+                    System.out.println("Opción no válida. Inténtalo de nuevo.");
+            }
+        }
+    }
+    /*Aclaro que ciertas cosas se quitaron */
 }
