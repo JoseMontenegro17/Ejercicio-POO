@@ -1,29 +1,37 @@
 package Corte2;
 
 // Interfaz que define las operaciones básicas para un garaje
-public interface IGaraje {
+
+//public interface IGaraje {
     /**
      * Alquila un espacio en el garaje para un vehículo.
      * 
      * @param vehiculo El vehículo que desea alquilar el espacio.
      * @return true si el espacio se pudo alquilar, false en caso contrario.
      */
-    boolean alquilarEspacio(Vehiculo vehiculo);
+   // boolean alquilarEspacio(Vehiculo vehiculo);
 
     /**
      * Calcula la proporción de cada tipo de vehículo en el garaje.
      */
-    void calcularProporcionVehiculos();
+    //void calcularProporcionVehiculos();
 
     /**
      * Cuenta los camiones por tipo (Sencillo/Doble).
      */
-    void contarCamionesPorTipo();
+   // void contarCamionesPorTipo();
 
     /**
      * Obtiene la cantidad de plazas disponibles en el garaje.
      * 
      * @return El número de plazas disponibles.
      */
+    //int plazasDisponibles();
+//}
+public interface IGaraje {
+    boolean alquilarEspacio(vehiculo vehiculo);
+    void calcularProporcionVehiculos();
+    void contarCamionesPorTipo();
     int plazasDisponibles();
 }
+

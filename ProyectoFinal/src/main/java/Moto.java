@@ -1,4 +1,13 @@
-public class Moto extends Vehiculo {
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+
+/**
+ *
+ * @author Alejo
+ */
+    public class Moto extends Vehiculo {
 
     // Constructor que inicializa las propiedades de la motocicleta
     public Moto(String marca, String modelo, String matricula) {
@@ -17,3 +26,5 @@ public class Moto extends Vehiculo {
         return "Moto";
     }
 }
+
+

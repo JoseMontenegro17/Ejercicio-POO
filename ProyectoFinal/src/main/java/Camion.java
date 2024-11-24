@@ -1,4 +1,13 @@
-public class Camion extends Vehiculo {
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+
+/**
+ *
+ * @author Alejo
+ */
+    public class Camion extends Vehiculo {
     private String tipoCamion; // Tipo de camión (Sencillo o Doble)
 
     // Constructor que inicializa las propiedades del camión
@@ -24,3 +33,5 @@ public class Camion extends Vehiculo {
         return "Camion";
     }
 }
+
+
